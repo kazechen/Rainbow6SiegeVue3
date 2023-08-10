@@ -1,7 +1,7 @@
 <script setup>
 import { computed, ref, watch } from "vue";
 import ListHuman from "../components/ListHuman.vue";
-import BeginnerTool from "../components/beginnertool.vue";
+import BeginnerTool from "../components/BeginnerTool.vue";
 import TheSelect from "../components/TheSelect.vue";
 import TheModal from "../components/TheModal.vue";
 import { useHumanStore } from "../stores/human.js";
@@ -17,7 +17,9 @@ const store = useHumanStore();
 const isShowModal = ref(false);
 const modalContentIndex = ref("");
 const modalData = computed(() => {
-  return data.value[modalContentIndex.value];
+  return modalContentIndex.value !== ""
+    ? data.value[modalContentIndex.value]
+    : {};
 });
 
 const filterPosition = computed(() => {
@@ -48,6 +50,7 @@ const handleModal = (index) => {
   document.body.style.overflow = "hidden";
 };
 const closeModal = () => {
+  modalContentIndex.value = "";
   isShowModal.value = false;
   document.body.classList.toggle("modal-open");
   document.body.style.overflow = "";
@@ -202,9 +205,9 @@ const specialtyInfo = computed(() => {
         <p class="text-white">{{ modalData?.Device_Description }}</p>
       </div>
       <!-- <hr /> -->
-      <p>主武器：{{ modalData?.Primary.join("、") }}</p>
-      <p>次要武器：{{ modalData?.Secondary.join("、") }}</p>
-      <p>裝　備：{{ modalData?.Gadget.join("、") }}</p>
+      <p>主武器：{{ modalData?.Primary?.join("、") }}</p>
+      <p>次要武器：{{ modalData?.Secondary?.join("、") }}</p>
+      <p>裝　備：{{ modalData?.Gadget?.join("、") }}</p>
     </template>
   </TheModal>
 </template>
