@@ -9,14 +9,14 @@ const route = useRouter();
         <div
           class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
         >
-          <a class="navbar-brand" href="/">
+          <router-link class="navbar-brand" to="/">
             <img
               class="logo"
               src="../assets/images/r6-logo.png"
               title="虹彩六號：圍攻行動-中文資訊"
             />
             <sup class="sub-text">中文資訊</sup>
-          </a>
+          </router-link>
 
           <ul
             class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"

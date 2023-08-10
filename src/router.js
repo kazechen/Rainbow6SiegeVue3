@@ -5,7 +5,7 @@ import Intro from "./views/Intro.vue";
 import External from "./views/External.vue";
 
 const routes = [
-  { path: "/", name: "Home", component: Home },
+  { path: "/", name: "Home", component: Home, alias: "/home" },
   { path: "/novice", name: "Novice", component: Novice },
   { path: "/intro", name: "Intro", component: Intro },
   { path: "/external", name: "External", component: External },
