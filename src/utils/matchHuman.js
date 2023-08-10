@@ -1,4 +1,4 @@
-import operators from "../../files/operators.json";
+import operators from "/public/files/operators.json";
 
 const humanData = operators.slice(0, 24);
 const humanList = [
