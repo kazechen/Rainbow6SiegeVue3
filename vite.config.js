@@ -5,7 +5,7 @@ import path from "path";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 
 export default defineConfig({
-  base: "rainbow6siegeVue3",
+  base: "Rainbow6SiegeVue3",
   plugins: [
     vue(),
     createSvgIconsPlugin({
