@@ -32,7 +32,7 @@ const handleModal = (index) => emit("showModal", index);
         @click="handleModal(item.index)"
       >
         <div>
-          <img :src="getImageUrl(`${item.img_url}_icon.png`)" />
+          <img :src="getImageUrl(`${item.img_url}_icon.png`)" loading="lazy" />
         </div>
         <div class="nick-name">{{ item.Nickname }}</div>
       </a>

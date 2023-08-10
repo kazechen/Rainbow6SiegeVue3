@@ -213,6 +213,7 @@ const specialtyInfo = computed(() => {
 </template>
 <style scoped>
 .avatar {
+  min-width: 96px;
   height: 160px;
 }
 </style>
